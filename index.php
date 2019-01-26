@@ -55,7 +55,11 @@ require_once ("iField.php");
         //$fld = $scan->Tables()->getItem(2)->Fields()->getField("NAMASISWA");
         $fld = $scan->Tables()->getItem(2)->Fields()->getItem(6);
         echo "<br><hr>";
-        print_r($scan->Tables()->getItem(2)->Fields()->getField("FIELD2"));
+
+        print_r($scan->Tables()->getItem(2)->Fields()->getItem(6)->getParentTable()->getTableName());
+        echo "<br>";
+        print_r($scan->Tables()->getItem(2)->Fields()->getItem(6)->getParentTable()->getDbScan()->getVersion());
+
         echo "<br><hr>";
         echo $fld->getFieldName()." Data Type = ".$fld->getDataType()."</br>";
         //nama field diubah
