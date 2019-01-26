@@ -1,11 +1,13 @@
 <?php
 require_once ("iFields.php");
+require_once ("dbscanner.php");
 
 class iTable
 {
   protected $tableName = "";
   protected $isView = false;
   protected $collFields;
+  protected $dbscanner;
 
   function __construct()
   {
@@ -13,6 +15,7 @@ class iTable
     $this->isView = false;
     //inisiasi collection Fields
     $this->collFields = new iFields();
+    $this->dbscanner = new dbscanner();
   }
 
   public function setTableName($value) {
@@ -34,6 +37,9 @@ class iTable
   //declarative collection di sini
   public function Fields() {
     return $this->collFields;
+  }
+  public function getDbScan() {
+    return $this->dbscanner;
   }
 
 }
