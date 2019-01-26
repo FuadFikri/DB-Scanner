@@ -1,4 +1,5 @@
 <?php
+require_once('iTable.php');
 class iField
 {
   protected $fieldName = "";
@@ -6,12 +7,14 @@ class iField
   protected $dataLength = 0;
   protected $isPK = false;
   protected $isNull = true;
+  protected $parentTable;
 
   function __construct()
   {
     // code...
     $this->fieldName = "field1";
     $this->dataType = "varchar";
+    $this->parentTable = new iTable();
   }
 
   function setFieldName($value) {
@@ -52,6 +55,10 @@ class iField
 
   function getIsNull() {
     return $this->isNull;
+  }
+
+  public function getParentTable(){
+    return $this->parentTable;
   }
 
 }
