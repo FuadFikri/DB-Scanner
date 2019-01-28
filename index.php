@@ -56,7 +56,7 @@ require_once ("iField.php");
         $fld = $scan->Tables()->getItem(2)->Fields()->getItem(6);
         echo "<br><hr>";
 
-        print_r($scan->Tables()->getItem(2)->Fields()->getItem(6)->getParentTable()->getTableName());
+        print_r($scan->Tables()->getItem(2)->Fields()->getItem(6));
         echo "<br>";
         print_r($scan->Tables()->getItem(2)->Fields()->getItem(6)->getParentTable()->getDbScan()->getVersion());
 
@@ -71,7 +71,8 @@ require_once ("iField.php");
         echo $fld2->getFieldName()." Data Type = ".$fld2->getDataType()."</br>";
         //echo "Berhasil";
         //echo "Tablenya".$fld->getParentTable->getTableName()->getDBScan()->getVersion();
-
+        echo "<br><hr>";
+        print_r($scan->Tables()->getItem(2)->Fields()->getItem(6)->getDataType());
       ?>
 
    </body>
