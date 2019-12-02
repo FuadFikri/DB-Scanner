@@ -12,8 +12,8 @@ class iField
   function __construct()
   {
     // code...
-    $this->fieldName = "field1";
-    $this->dataType = "varchar";
+    // $this->fieldName = "";
+    // $this->dataType = "";
     $this->parentTable = new iTable();
   }
 
@@ -59,6 +59,11 @@ class iField
 
   public function getParentTable(){
     return $this->parentTable;
+  }
+
+  public function setParentTable($parentTable)
+  {
+    $this->parentTable=$parentTable;
   }
 
 }

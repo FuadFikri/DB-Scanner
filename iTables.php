@@ -1,5 +1,6 @@
 <?php
 require_once ("iTable.php");
+require_once ("dbscanner.php");
 
 class iTables
 {
@@ -41,6 +42,7 @@ class iTables
 
   //return-nya object
   public function getTable($tableName) {
+   
     $theTable = null;
     for( $i = 0; $i<$this->getCount(); $i++ ) {
       $theTable = $this->coll[$i];
@@ -48,7 +50,18 @@ class iTables
         break;
       }
     }
+  
     return $theTable;
+  }
+
+  public function getTables(){
+    $tables=array();
+    for( $i = 0; $i<$this->getCount(); $i++ ) {
+      $theTable = $this->coll[$i];
+      if ($theTable->getTableName()==strtoupper($tableName)) {
+        break;
+      }
+    }
   }
 
   public function removeByTableName($tableName) {

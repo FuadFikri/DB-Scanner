@@ -10,13 +10,14 @@ class iFields
     // code...
   }
 
-  public function Add($fieldName,$dataType,$dataLength,$isPK,$isNull) {
+  public function Add($fieldName,$dataType,$isPK,$isNull,$parentTable) {
     $newField = new iField();
     $newField->setFieldName(strtoupper($fieldName));
     $newField->setDataType($dataType);
-    $newField->setDataLength($dataLength);
+    // $newField->setDataLength($dataLength);
     $newField->setIsPK($isPK);
     $newField->setIsNull($isNull);
+    $newField->setParentTable($parentTable);
     //bisa ditambahkan validasi
     array_push($this->coll,$newField);
   }

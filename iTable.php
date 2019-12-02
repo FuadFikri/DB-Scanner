@@ -5,14 +5,14 @@ require_once ("dbscanner.php");
 class iTable
 {
   protected $tableName = "";
-  protected $isView = false;
-  protected $collFields;
+  protected $isView;
+  public $collFields;
   protected $dbscanner;
 
   function __construct()
   {
-    $this->tableName = "table1";
-    $this->isView = false;
+    // $this->tableName = "table1";
+    // $this->isView = false;
     //inisiasi collection Fields
     $this->collFields = new iFields();
     $this->dbscanner = new dbscanner();
